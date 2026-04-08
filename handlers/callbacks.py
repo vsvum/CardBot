@@ -4,9 +4,9 @@ from .start import get_main_menu_keyboard  # Чтобы кнопка "Назад
 def register_menu_callbacks(bot):
     # 📝 Тексты, которые покажутся при нажатии кнопок
     MENU_TEXTS = {
-        "opt_delivery": "📦 Информация о доставке:\n• Курьером: 1-2 дня\n• Самовывоз: бесплатно",
-        "opt_payment": "💰 Способы оплаты:\n• Карта, СБП, наличные",
-        "opt_support": "🆘 Техподдержка:\nНапишите нам: @admin_support"
+        "opt_delivery": "📦 Информация обо мне:\n• Полное имя:Иван Петрович\n• Никнейм:vsvum\n• Роль: Python-разработчик\n• Локация:Санкт-Питербург",
+        
+        "opt_support": "🆘 Связатся:\nНапишите нам: @error_0100"
     }
 
     @bot.callback_query_handler(func=lambda call: call.data in MENU_TEXTS)

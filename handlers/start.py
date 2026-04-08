@@ -4,8 +4,8 @@ def get_main_menu_keyboard():
     """Создает клавиатуру главного меню"""
     markup = InlineKeyboardMarkup()
 
-    markup.add(InlineKeyboardButton("📦 Доставка", callback_data="opt_delivery"))
-    markup.add(InlineKeyboardButton("💰 Оплата", callback_data="opt_payment"))
+    markup.add(InlineKeyboardButton("📦 Анкета", callback_data="opt_delivery"))
+    
     markup.add(InlineKeyboardButton("🆘 Поддержка", callback_data="opt_support"))
     
     return markup
@@ -15,6 +15,6 @@ def register_start_handler(bot):
     def cmd_start(message):
         bot.send_message(
             message.chat.id,
-            "Привет! 👋 Выберите раздел меню:",
+            "Привет это анкета обо мне! 👋 Выберите раздел:",
             reply_markup=get_main_menu_keyboard()
         )
