@@ -1,7 +1,11 @@
-import config
-from bot import bot
-from handlers import start, callbacks  # Импорт регистрирует хендлеры
+import telebot
+from handlers import register_start_handler, register_menu_callbacks
 
-if __name__ == "__main__":
-    print("🟢 Бот запущен...")
-    bot.infinity_polling()
+bot = telebot.TeleBot("ВАШ_ТОКЕН")
+
+# 🔌 Регистрируем все обработчики, передавая экземпляр бота
+register_start_handler(bot)
+register_menu_callbacks(bot)
+
+print("✅ Бот запущен")
+bot.polling(none_stop=True)
